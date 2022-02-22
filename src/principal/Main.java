@@ -12,11 +12,12 @@ public class Main {
 
 
 
-        int[] arrayAleatorio=new int[100] ;
+        int[] arrayAleatorio=new int[10] ;
 
         for (int i=0;i<arrayAleatorio.length;i++)
             arrayAleatorio[i] = (int) (Math.random()*200)+100;
 
+        System.out.println("Array aleatorío");
         for (int j : arrayAleatorio) {
             System.out.print(j+" ");
             }
@@ -26,18 +27,21 @@ public class Main {
 
          nuevoArray=array.arrayPar(arrayAleatorio);
 
+        System.out.println("Array rellenado con los pares del anterior");
         for (int j : nuevoArray) {
             System.out.print(j+" ");
         }
         System.out.println();
 
-int[] array2= array.se_repite(20);
+        System.out.println("Array rellenado con números aleatorios sin repetir:");
+int[] array2 = new int[10];
+array.llenarArrayAleatorio(array2);
 
         for (int j : array2) {
             System.out.print(j+" ");
         }
         System.out.println();
-    
+
 
     }
 }
