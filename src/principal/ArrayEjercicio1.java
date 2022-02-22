@@ -1,7 +1,6 @@
 package principal;
 
 
-import java.util.Random;
 
 public class ArrayEjercicio1 {
 
@@ -93,4 +92,45 @@ public class ArrayEjercicio1 {
     //    }
 //return resultado;
  //  }
+
+
+
+    public boolean esPrimo(int numero) {
+        boolean primo=false;
+
+        if (factorial(numero)%numero==0){primo=true;}
+
+        return primo;
+    }
+
+    public int factorial(int numero){
+       int factorial=1;
+        factorial=factorial*numero;
+        numero=numero-1;
+        return factorial;
+    }
+
+    public int[] arrayPrimo(int[] array) {
+        int contadorPrimos = 0, aux = 0;
+
+        for (int j : array) {
+            if (esPrimo(j)) {
+                contadorPrimos++;
+            }
+        }
+
+        int[] arrayNuevo = new int[contadorPrimos];
+
+        for (int k : array) {
+            if (esPrimo(k)) {
+                arrayNuevo[aux] = k;
+                aux++;
+
+            }
+        }
+
+        return arrayNuevo;
+    }
+
+
 }

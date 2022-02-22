@@ -14,7 +14,7 @@ public class Main {
 
         int[] arrayAleatorio=new int[10] ;
 
-        for (int i=0;i<arrayAleatorio.length;i++)
+        for (int i=0;i<arrayAleatorio.length;i++)//rellenamos array
             arrayAleatorio[i] = (int) (Math.random()*200)+100;
 
         System.out.println("Array aleatorío");
@@ -42,6 +42,26 @@ array.llenarArrayAleatorio(array2);
         }
         System.out.println();
 
+        int[] arrayAleatorioParaPrimo=new int[10] ;
+        for (int i=0;i<arrayAleatorio.length;i++)
+            arrayAleatorioParaPrimo[i] = (int) (Math.random()*30);
+
+        int[] arrayPrimo1 ;
+    arrayPrimo1=array.arrayPrimo(arrayAleatorioParaPrimo);//rellenamos array
+
+        System.out.println("Array aleatorío");
+        for (int j : arrayAleatorioParaPrimo) {
+            System.out.print(j+" ");
+        }
+        System.out.println();
+
+
+
+        System.out.println("Array rellenado con los primos del anterior ");
+        for (int j : arrayPrimo1) {
+            System.out.print(j+" ");
+        }
+        System.out.println();
 
     }
 }
