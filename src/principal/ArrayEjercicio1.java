@@ -1,6 +1,7 @@
 package principal;
 
 
+import java.util.Arrays;
 
 public class ArrayEjercicio1 {
 
@@ -98,38 +99,44 @@ public class ArrayEjercicio1 {
     public boolean esPrimo(int numero) {
         boolean primo=false;
 
-        if (factorial(numero)%numero==0){primo=true;}
+        if ((factorial(numero-1)+1)%numero==0){primo=true;}
 
         return primo;
     }
 
     public int factorial(int numero){
-       int factorial=1;
-        factorial=factorial*numero;
-        numero=numero-1;
-        return factorial;
+       int resultado=1;
+
+       if (numero==1) {
+           resultado = 1;
+       }else {
+           resultado = numero * factorial(numero - 1);
+       }
+        return resultado;
     }
+    //El fallo que tenía es que multiplicaba
 
     public int[] arrayPrimo(int[] array) {
-        int contadorPrimos = 0, aux = 0;
-
-        for (int j : array) {
-            if (esPrimo(j)) {
+        int contadorPrimos = 0;
+        int[] arrayNuevo = new int[array.length];
+        for (int elemento : array) {
+            if (esPrimo(elemento)) {
+                arrayNuevo[contadorPrimos]=elemento;
                 contadorPrimos++;
-            }
-        }
-
-        int[] arrayNuevo = new int[contadorPrimos];
-
-        for (int k : array) {
-            if (esPrimo(k)) {
-                arrayNuevo[aux] = k;
-                aux++;
 
             }
         }
 
-        return arrayNuevo;
+              int[] arrayFinal=Arrays.copyOfRange(arrayNuevo,0,contadorPrimos-1);
+
+        return arrayFinal;
+    }
+
+
+    public int[]  arrayReves(int[] array){
+        int[] arrayFinal=new int[array.length];
+        System.arraycopy(array, array.length,arrayFinal,0,array.length);
+        return arrayFinal;
     }
 
 

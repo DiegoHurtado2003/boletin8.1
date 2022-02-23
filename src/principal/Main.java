@@ -44,7 +44,7 @@ array.llenarArrayAleatorio(array2);
 
         int[] arrayAleatorioParaPrimo=new int[10] ;
         for (int i=0;i<arrayAleatorio.length;i++)
-            arrayAleatorioParaPrimo[i] = (int) (Math.random()*30);
+            arrayAleatorioParaPrimo[i] = (int) (Math.random()*14)+1;
 
         int[] arrayPrimo1 ;
     arrayPrimo1=array.arrayPrimo(arrayAleatorioParaPrimo);//rellenamos array
@@ -62,6 +62,7 @@ array.llenarArrayAleatorio(array2);
             System.out.print(j+" ");
         }
         System.out.println();
+
 
     }
 }
