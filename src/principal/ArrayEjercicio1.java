@@ -107,10 +107,10 @@ public class ArrayEjercicio1 {
     public int factorial(int numero){
        int resultado=1;
 
-       if (numero==1) {
+       if (numero==0) { //si se pone que se aigual a 1 en vez de 0 da un eroor de StackOverflow
            resultado = 1;
        }else {
-           resultado = numero * factorial(numero - 1);
+           resultado = numero * factorial(numero-1 );
        }
         return resultado;
     }
@@ -134,8 +134,13 @@ public class ArrayEjercicio1 {
 
 
     public int[]  arrayReves(int[] array){
+        int aux=0;
         int[] arrayFinal=new int[array.length];
-        System.arraycopy(array, array.length,arrayFinal,0,array.length);
+       for (int i=array.length-1; i>=0; i-- ){
+           arrayFinal[aux]=array[i];
+           aux++;
+       }
+
         return arrayFinal;
     }
 

@@ -63,6 +63,14 @@ array.llenarArrayAleatorio(array2);
         }
         System.out.println();
 
+        int[] arrayAlReves=new int[10] ;
+        arrayAlReves=array.arrayReves(arrayAleatorioParaPrimo);
+
+        System.out.println("Array rellenado con los números del anterior al revés ");
+        for (int j : arrayAlReves) {
+            System.out.print(j+" ");
+        }
+        System.out.println();
 
     }
 }
